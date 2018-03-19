@@ -1,0 +1,129 @@
+[colors]
+background = ${xrdb:polybar.background}
+foreground = ${xrdb:polybar.foreground}
+highlight  = ${xrdb:color1}
+value      = ${xrdb:polybar.value}
+icon       = ${xrdb:polybar.icon}
+
+[bar/x]
+height = 25
+width = 100%
+border-size = 10
+border-color = ${colors.background}
+module-margin = 1
+
+tray-position = right
+tray-padding = 1
+fixed-center = true
+
+modules-left = i3 mpd
+modules-center = 
+modules-right = volume battery network day time
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-3 =mono:size=14
+font-0 =FontAwesome\ 5\ Free:size=10;3
+font-1 =FontAwesome\ 5\ Free:style=Solid:size=10
+font-2 =FontAwesome\ 5\ Brands:size=10
+font-4 =HanaMinA:size=12
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+
+label-song  = "%{B#333333}  %{B-}%{B#222222} %artist% - %title% %{B-}"
+label-offline  = "%{B#333333}  %{B-}%{B#222222} ... %{B-}"
+
+format-online = <label-song>
+format-onffline = <label-offline>
+
+[module/network]
+type = internal/network
+interface = wlp2s0
+interval = 10.0
+
+label-maxlen = 30
+
+label-connected  = " %essid% "
+label-disconnected  = " no wifi "
+
+format-connected-prefix = "  "
+format-disconnected-prefix = "  "
+
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 99
+
+label-full        = " %percentage%% "
+label-charging    = " %percentage%% "
+label-discharging = " %percentage%% "
+
+format-full-prefix        = "  "
+format-charging-prefix    = "  "
+format-discharging-prefix = "  "
+
+
+
+format-full        = " <label-full>"
+format-charging    = " <label-charging>"
+format-discharging = " <label-discharging>"
+
+[module/volume]
+type = internal/alsa
+
+label-muted  = " %percentage% "
+label-volume = " %percentage% "
+
+format-muted-prefix  = "  "
+format-volume-prefix = "  "
+
+format-muted-prefix-background  = ${colors.icon}
+format-volume-prefix-background = ${colors.icon}
+
+format-muted-background  = ${colors.value}
+format-volume-background = ${colors.value}
+
+format-muted  = " <label-muted>"
+format-volume = " <label-volume>"
+
+[module/time]
+type = internal/date
+interval = 5
+
+time =  "%H:%M"
+time-alt = "%Y-%m-%d"
+
+label = " %time% "
+
+[module/day]
+type = internal/date
+interval = 60
+
+time =  "%Y-%m-%d"
+
+label = " %time% "
+format-prefix = "  "
+
+[module/i3]
+
+type = internal/i3
+strip-wsnumbers = false
+index-sort = true
+wm-restack = i3
+padding = 1
+
+
+#label-focused-background  = ${colors.icon}
+#label-unfocused-background  = ${colors.background}
+
+label-unfocused   = %name%
+label-focused = %{F#f00}%name%%{F-}
+
+label-focused-padding = 1
+label-unfocused-padding = 1
