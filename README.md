@@ -2,11 +2,11 @@
 
 ## Info
 
-##### This repository contains dotfiles for my laptop setup.
+#### This repository contains dotfiles for my laptop setup.
 
 ![Base Preview](scrots/base.png)
 
-##### The main premise has been to make everything automatically adapt colors from pywal:
+#### The main premise has been to make everything automatically adapt colors from pywal:
 
 ![Startpage](scrots/startpage.png)
 ![Editor](scrots/editor.png)
