@@ -1,0 +1,6 @@
+[submodule "config"]
+	path = config
+	url = https://github.com/shebpamm/dots-config
+[submodule "bin"]
+	path = bin
+	url = https://github.com/shebpamm/dots-bin
