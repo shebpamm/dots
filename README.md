@@ -1,4 +1,4 @@
-# Dots of mine.
+<h1 align="center">Dots of mine.</h1>
 
 ## Info
 
